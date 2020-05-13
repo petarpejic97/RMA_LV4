@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModel
 
 class BirdCounterViewModel : ViewModel() {
     var counter =  MutableLiveData<Int>()
-    var background = R.color.colorTransparent
+    var background = MutableLiveData<Int>()
 
 
 }

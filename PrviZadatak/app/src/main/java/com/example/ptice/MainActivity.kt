@@ -29,8 +29,6 @@ class MainActivity : AppCompatActivity() {
 
         setUpUI()
 
-
-
         viewModel.counter.observe(this,androidx.lifecycle.Observer {
             binding.invalidateAll()
         })
@@ -38,8 +36,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setUpUI(){
-        if(viewModel.counter.value == null){
-            viewModel.counter.value=0
+        if(viewModel.counter.value == null ){
+            viewModel.counter.value = 0
+        }
+        if(viewModel.background.value == null ){
+            viewModel.background.value = R.color.colorTransparent
         }
         binding.apply {
             bird = viewModel
@@ -57,7 +58,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun setColor(color:Int){
-        binding.bird?.background = color
+        viewModel.background.value= color
     }
     private fun incrementNumber() {
         var number = viewModel.counter.value

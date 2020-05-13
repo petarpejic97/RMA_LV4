@@ -19,7 +19,7 @@
             android:layout_centerInParent="true"
             android:gravity="center"
             android:background="@{ContextCompat.getColor(context,bird.background)}"
-            android:text="@={bird.counter}"
+            android:text="@{Integer.toString(bird.counter)}"
             android:textSize="50sp" />
 
         <Button
